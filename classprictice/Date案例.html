@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // 声明函数
+    //    function getDate(date) {
+    //        // 判断是否为日期
+    //        if (!date instanceof Date) {
+    //            alert('日期格式错误');
+    //            return;//(return false)
+    //        }
+    //        // 声明变量获取年月日 时分秒
+    //        var year = date.getFullYear();
+    //        var month = date.getMonth() + 1;
+    //        var day = date.getDate();
+    //        var hour = date.getHours();
+    //        var minute = date.getMinutes();
+    //        var second = date.getSeconds();
+    //        //2. 判断是否为两位是
+    //        month = month > 10 ? month : '0' + month;
+    //        day = day > 10 ? day : '0' + day;
+    //        hour = hour > 10 ? hour : '0' + hour;
+    //        minute = minute > 10 ? minute : '0' + minute;
+    //        second = second > 10 ? second : '0' + second;
+    //        return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+    //    }
+    //    var date = new Date();
+    //    console.log(getDate(date));
+
+
+    //计算时间差，返回相差的天时分秒
+    //1. 声明函数-----计算时间差
+    function dValue(str, end) {
+        if (!str instanceof Date || !end instanceof Date) {
+            alert('日期格式错误');
+            return;//(return false)
+        }
+        var dvalue = (str - end) / 1000;//单位为秒
+
+        //2. 换算单位
+        var day = Math.floor(dvalue / 60 / 60 / 24),
+                hour = Math.floor(dvalue / 60 / 60 % 24),
+                minute = Math.floor(dvalue / 60 % 60),
+                second = Math.floor(dvalue % 60);
+        //3. 返回匿名对象----天时分秒作为对象属性
+
+        return {
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        }
+    }
+    var str = new Date();
+    var end = new Date('1990-4-20');
+    var res = dValue(str, end);
+    console.log(res);
+
+
+</script>
+</body>
+</html>

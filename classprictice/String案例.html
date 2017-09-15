@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //字符串的所有方法不会改变字符串本身，而是新建字符串返回
+    //charAt()      //返回指定位置处字符
+    // concat()     //将一个或多个字符串与元字符串链接
+
+    // 截取字符串"我爱中华人民共和国"，中的"中华"------slice()
+    //    var s = '我爱中华人民共和国';
+    //    console.log(s.slice(2, 4));
+
+    // "abcoefoxyozzopp"查找字符串中所有o出现的位置------indexOf()
+//    var s = "abcoefoxyozzopp";
+//    var arr = [];
+//    //var index = -1;
+//    do {
+//       var  index = s.indexOf('o',index+1);//第一次返回3，，进行判断，，继续循环第二次，返回6，，，，直到返回12后无'o',返回-1，，结束循环
+//        if (index != -1) {
+//            arr.push(index);
+//        }
+//    } while (index > -1)
+//    console.log(arr);
+
+
+    // 把字符串中所有的o替换成!
+        // var s = "abcoefoxyozzopp";
+        // var index = -1;
+        // do {
+        //     index = s.indexOf('z', index + 1);
+        //     if (index !== -1) {
+        //         s = s.replace('z', '!');
+        //     }
+        // } while (index !== -1)
+        // console.log(s);
+
+
+    // 把字符串中的所有空白去掉'   abc       xyz  a    123   '
+       var s = '...abc.......xyz.a....a...';
+       //var index=-1;
+       var arr=[];
+       do {
+           var index = s.indexOf('.',index+1);
+           if (index != -1) {
+               arr.push(index);
+               s = s.replace('.', '');
+           }
+       } while (index > -1)
+   console.log(arr);
+       console.log(s);
+    //        var ss = s.split(' ');
+    //        console.log(ss);
+    //        console.log(ss.join(""));
+
+
+    // 判断一个字符串中出现次数最多的字符，统计这个次数
+    //    var s = "abcoefoxyozzopp";
+    //    // 统计字符出现的次数
+    //    var obj = {};
+    //    for (var i = 0; i < s.length; i++) {
+    //        var temp = s[i];
+    //        if (obj[temp]) {
+    //            obj[temp]++;
+    //        }
+    //        else {
+    //            obj[temp] = 1;
+    //        }
+    //    }
+    //    console.log(obj);
+    //    // 判断大小------对对象的属性值进行遍历
+    //    var max = 1;
+    //    for (var key in obj) {
+    //        if (obj[key] > max) {
+    //            max = obj[key];
+    //            var maxL = key;
+    //        }
+    //    }
+    //    console.log(maxL, max);
+
+</script>
+</body>
+</html>

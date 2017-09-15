@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //object对象的遍历及打印
+    var obj = {};
+    for (var i = 0; i < 10; i++) {
+        obj[i] = i * 2;
+    }
+    for(var key in obj) {
+        console.log(key + "==" + obj[key]);
+    }
+//    console.log(key);  //key为对象的属性
+//    console.log(obj[key]);//obj[key]为对象的属性值
+    console.log(obj);
+    var objj={
+        name:'li',
+        age:20
+    }
+    console.log(objj.name);
+    for(var key in objj){
+        console.log(objj[key]);
+    }
+
+
+
+</script>
+</body>
+</html>
